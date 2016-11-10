@@ -7,13 +7,13 @@ def print_runtime(f, n, msg):
     print(msg + " time: " + str(time.time() - t) + " result: " + str(res))
 
 
-def brute_fibonacci(n):
+def recursive_fibonacci(n):
     if n == 0:
         return 0
     if n == 1:
         return 1
     else:
-        return brute_fibonacci(n-1) + brute_fibonacci(n-2)
+        return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
 
 
 def dynamic_fibonacci(n):
@@ -31,7 +31,8 @@ def dynamic_fibonacci(n):
 
 
 # Takes approx. 3.7 seconds, >6 when n=35
-print_runtime(brute_fibonacci, 34, "brute force: ")
+print_runtime(recursive_fibonacci, 34, "recursive: ")
 
 # Takes approx. 0.0015 second when n=1000.
 print_runtime(dynamic_fibonacci, 1000, "dynamic programming: ")
+
